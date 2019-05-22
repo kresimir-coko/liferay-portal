@@ -1122,6 +1122,6 @@ AUI.add(
 	},
 	'',
 	{
-		requires: ['aui-io-plugin-deprecated', 'aui-toolbar', 'autocomplete-base', 'datasource-io', 'json-parse', 'liferay-portlet-base', 'liferay-portlet-url', 'liferay-util-window']
+		requires: ['aui-io-plugin-deprecated', 'aui-toolbar', 'autocomplete-base', 'datasource-io', 'json-parse', 'liferay-portlet-base', 'liferay-util-window']
 	}
 );

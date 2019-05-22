@@ -890,6 +890,6 @@ AUI.add(
 	},
 	'',
 	{
-		requires: ['aui-base', 'aui-io-deprecated', 'cookie', 'json', 'liferay-portlet-url', 'querystring']
+		requires: ['aui-base', 'aui-io-deprecated', 'cookie', 'json', 'querystring']
 	}
 );

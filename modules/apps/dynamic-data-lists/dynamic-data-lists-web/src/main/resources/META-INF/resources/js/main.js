@@ -743,6 +743,6 @@ AUI.add(
 	},
 	'',
 	{
-		requires: ['aui-arraysort', 'aui-datatable', 'datatable-sort', 'json', 'liferay-portlet-dynamic-data-mapping-custom-fields', 'liferay-portlet-url', 'liferay-util-window']
+		requires: ['aui-arraysort', 'aui-datatable', 'datatable-sort', 'json', 'liferay-portlet-dynamic-data-mapping-custom-fields', 'liferay-util-window']
 	}
 );

@@ -1566,7 +1566,7 @@
 				);
 			}
 		},
-		['aui-base', 'liferay-portlet-url', 'liferay-util-window']
+		['aui-base', 'liferay-util-window']
 	);
 
 	Liferay.provide(

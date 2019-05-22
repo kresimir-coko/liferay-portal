@@ -503,14 +503,6 @@
 							'liferay-node'
 						]
 					},
-					'liferay-portlet-url': {
-						path: 'portlet_url.js',
-						requires: [
-							'aui-base',
-							'aui-io-request',
-							'querystring-stringify-simple'
-						]
-					},
 					'liferay-preview': {
 						path: 'preview.js',
 						requires: [
