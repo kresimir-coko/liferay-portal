@@ -14,7 +14,6 @@
 		"metal-component": "2.16.8",
 		"react": "16.12.0",
 		"react-dom": "16.12.0",
-		"typescript": "^4.5.3",
 		"uuid": "^3.3.2"
 	},
 	"jest": {
