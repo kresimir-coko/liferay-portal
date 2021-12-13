@@ -1,12 +1,1 @@
-{
-	"files": [
-		"src/main/resources/META-INF/resources/index.d.ts",
-		"src/main/resources/META-INF/resources/liferay/liferay.d.ts"
-	],
-	"compilerOptions": {
-		"noImplicitAny": true,
-		"strictNullChecks": true,
-		"noEmit": true,
-		"forceConsistentCasingInFileNames": true
-	}
-}
+{}
