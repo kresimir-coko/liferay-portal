@@ -28,7 +28,8 @@
 	},
 	"include": [
 		"src/**/*",
-		"test/**/*"
+		"test/**/*",
+		"../../../global-env.d.ts"
 	],
 	"references": [
 		{
