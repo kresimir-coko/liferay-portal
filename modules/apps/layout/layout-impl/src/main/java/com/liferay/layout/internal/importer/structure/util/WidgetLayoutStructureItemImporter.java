@@ -25,7 +25,6 @@ import com.liferay.portal.kernel.model.Portlet;
 import com.liferay.portal.kernel.portlet.PortletIdCodec;
 import com.liferay.portal.kernel.service.PortletLocalService;
 import com.liferay.portal.kernel.service.PortletPreferencesLocalService;
-import com.liferay.portal.kernel.service.ServiceContext;
 import com.liferay.portal.kernel.service.ServiceContextThreadLocal;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.liferay.portal.kernel.util.PortletKeys;
@@ -226,17 +225,15 @@ public class WidgetLayoutStructureItemImporter
 			PortletIdCodec.encode(widgetName, widgetInstanceId),
 			warningMessages, widgetPermissionsMaps);
 
-		ServiceContext serviceContext =
-			ServiceContextThreadLocal.getServiceContext();
-
 		return _fragmentEntryLinkLocalService.addFragmentEntryLink(
-			null, serviceContext.getUserId(), layout.getGroupId(), 0, 0,
+			null, layout.getUserId(), layout.getGroupId(), 0, 0,
 			_segmentsExperienceLocalService.fetchDefaultSegmentsExperienceId(
 				layout.getPlid()),
 			layout.getPlid(), StringPool.BLANK, StringPool.BLANK,
 			StringPool.BLANK, StringPool.BLANK,
 			editableValueJSONObject.toString(), widgetInstanceId, 0, null,
-			FragmentConstants.TYPE_PORTLET, serviceContext);
+			FragmentConstants.TYPE_PORTLET,
+			ServiceContextThreadLocal.getServiceContext());
 	}
 
 	private String _getPortletInstanceId(

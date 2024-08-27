@@ -2008,7 +2008,7 @@ public class LayoutsImporterImpl implements LayoutsImporter {
 
 		_updateLayoutPageTemplateStructure(layout, layoutStructure);
 
-		_updateLayouts(plid, userId);
+		_updateLayouts(plid);
 	}
 
 	private boolean _processPageElement(
@@ -2159,14 +2159,12 @@ public class LayoutsImporterImpl implements LayoutsImporter {
 				deleteLayoutPageTemplateStructure(layoutPageTemplateStructure);
 		}
 
-		ServiceContext serviceContext =
-			ServiceContextThreadLocal.getServiceContext();
-
 		_layoutPageTemplateStructureLocalService.addLayoutPageTemplateStructure(
-			serviceContext.getUserId(), layout.getGroupId(), layout.getPlid(),
+			layout.getUserId(), layout.getGroupId(), layout.getPlid(),
 			_segmentsExperienceLocalService.fetchDefaultSegmentsExperienceId(
 				layout.getPlid()),
-			jsonObject.toString(), serviceContext);
+			jsonObject.toString(),
+			ServiceContextThreadLocal.getServiceContext());
 
 		try (AutoCloseable autoCloseable =
 				_layoutServiceContextHelper.getServiceContextAutoCloseable(
@@ -2187,7 +2185,7 @@ public class LayoutsImporterImpl implements LayoutsImporter {
 		}
 	}
 
-	private void _updateLayouts(long plid, long userId) throws Exception {
+	private void _updateLayouts(long plid) throws Exception {
 		Layout layout = _layoutLocalService.fetchLayout(plid);
 
 		Layout draftLayout = layout.fetchDraftLayout();
@@ -2196,11 +2194,11 @@ public class LayoutsImporterImpl implements LayoutsImporter {
 			layout, draftLayout);
 
 		_layoutLocalService.updateStatus(
-			userId, draftLayout.getPlid(), WorkflowConstants.STATUS_APPROVED,
+			draftLayout.getUserId(), draftLayout.getPlid(),
+			WorkflowConstants.STATUS_APPROVED,
 			ServiceContextThreadLocal.getServiceContext());
-
 		_layoutLocalService.updateStatus(
-			userId, plid, WorkflowConstants.STATUS_APPROVED,
+			draftLayout.getUserId(), plid, WorkflowConstants.STATUS_APPROVED,
 			ServiceContextThreadLocal.getServiceContext());
 	}
 
