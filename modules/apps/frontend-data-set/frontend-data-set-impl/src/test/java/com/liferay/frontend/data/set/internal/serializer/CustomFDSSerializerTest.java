@@ -1419,7 +1419,7 @@ public class CustomFDSSerializerTest extends BaseFDSSerializerTestCase {
 	}
 
 	private void _mockSerializeHideManagementBarInEmptyState(
-		String fdsName, Boolean hideManagementBarInEmptyState) {
+		String fdsName, boolean hideManagementBarInEmptyState) {
 
 		Mockito.when(
 			_customFDSSerializer.getDataSetObjectEntryProperties(
